@@ -6,7 +6,8 @@ import {
 
 import Layout from './components/layout'
 import Home from './composites/home'
-import About from './composites/about'
+import Browse from './composites/browse'
+import My from './composites/my'
 
 export default () => {
   return (
@@ -14,7 +15,8 @@ export default () => {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='about' element={<About />} />
+          <Route path='browse' element={<Browse />} />
+          <Route path='my' element={<My />} />
           <Route path='*' element={<div>404</div>} />
         </Route>
       </Routes>
