@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "dev": "npx parcel src/index.html",
+    "https": "npx parcel src/index.html --cert localhost.cert --key localhost.key"
+  },
+  "devDependencies": {
+    "parcel": "^2.4.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.3.0",
+    "valtio": "^1.5.2"
+  },
+  "alias": {
+    "$stores": "./src/stores"
+  }
+}
