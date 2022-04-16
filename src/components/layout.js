@@ -11,7 +11,7 @@ export default function Layout () {
 
 function Nav () {
   return (
-    <div className='fixed z-50 bottom-0 flex w-full h-16 text-white bg-blue-700'>
+    <div className='fixed z-50 bottom-0 flex w-full h-14 text-white bg-blue-700'>
       <NavItem text={faker.lorem.word(7)} path='/' />
       <NavItem text={faker.lorem.word(5)} path='/browse' />
       <NavItem text={faker.lorem.word(6)} path='/my' />

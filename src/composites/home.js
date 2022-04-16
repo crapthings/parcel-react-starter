@@ -9,7 +9,7 @@ import List from '$c/list'
 
 export default function Home () {
   return (
-    <div className='mb-16'>
+    <div className='mb-14'>
       <Menu />
       <Grid />
       <Card />
