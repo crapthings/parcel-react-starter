@@ -13,14 +13,17 @@
   },
   "dependencies": {
     "@faker-js/faker": "^6.1.2",
+    "axios": "^0.26.1",
     "classnames": "^2.3.1",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "react-router-dom": "^6.3.0",
     "valtio": "^1.5.2"
   },
   "alias": {
-    "$stores": "./src/stores"
+    "$stores": "./src/stores",
+    "$c": "./src/components"
   }
 }
