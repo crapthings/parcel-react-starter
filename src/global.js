@@ -34,5 +34,7 @@ window.classNames = classNames
 window.his = createBrowserHistory({ window })
 window.goback = () => his.back()
 window.goto = (...args) => his.push(...args)
+window.navBack = () => () => his.back()
+window.navTo = (...args) => () => his.push(...args)
 
 window.faker = faker

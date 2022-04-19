@@ -1,6 +1,9 @@
 export default function Page3 () {
   return (
-    <div>page3</div>
+    <div>
+      <div>page3</div>
+      <button onClick={navTo(`/list/${faker.lorem.word()}`)}>test</button>
+    </div>
   )
 }
 
