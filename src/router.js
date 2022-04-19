@@ -8,13 +8,11 @@ import Layout from './components/layout'
 
 import * as composites from './composites/**/*.js'
 
-const history = window.his
-
 export default function Router () {
   const { home, ...routes } = composites
 
   return (
-    <HistoryRouter history={history}>
+    <HistoryRouter history={window._history}>
       <Routes>
         <Route index element={(
           <Layout>
@@ -22,7 +20,7 @@ export default function Router () {
           </Layout>
         )} />
 
-        {_.map(routes, router)}
+        {_.map(routes, renderRoute)}
 
         <Route path='*' element={<div>404</div>} />
       </Routes>
@@ -30,7 +28,7 @@ export default function Router () {
   )
 }
 
-function router (element, filename) {
+function renderRoute (element, filename) {
   const [pathname, ...params] = filename.split(':')
 
   let path = '/' + pathname

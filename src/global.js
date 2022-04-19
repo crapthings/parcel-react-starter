@@ -4,7 +4,7 @@ import _ from 'lodash'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
-import { useState, useEffect, useLayoutEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 
 import createStore from 'zustand'
@@ -31,10 +31,10 @@ window.useSearchParams = useSearchParams
 window.createStore = createStore
 window.classNames = classNames
 
-window.his = createBrowserHistory({ window })
-window.goback = () => his.back()
-window.goto = (...args) => his.push(...args)
-window.navBack = () => () => his.back()
-window.navTo = (...args) => () => his.push(...args)
+window._history = window.router = createBrowserHistory({ window })
+window.goback = () => router.back()
+window.goto = (...args) => router.push(...args)
+window.navBack = () => () => router.back()
+window.navTo = (...args) => () => router.push(...args)
 
 window.faker = faker
