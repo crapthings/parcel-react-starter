@@ -1,12 +1,11 @@
 {
-  "scripts": {
-    "dev": "npx parcel src/index.html",
-    "https": "npx parcel src/index.html --cert localhost.cert --key localhost.key"
-  },
   "devDependencies": {
+    "@parcel/config-default": "^2.4.1",
+    "@parcel/resolver-glob": "^2.4.1",
     "autoprefixer": "^10.4.4",
-    "daisyui": "^2.14.0",
+    "daisyui": "^2.14.1",
     "parcel": "^2.4.1",
+    "parcel-reporter-static-files-copy": "^1.3.4",
     "postcss": "^8.4.12",
     "process": "^0.11.10",
     "tailwindcss": "^3.0.24"
@@ -15,15 +14,24 @@
     "@faker-js/faker": "^6.1.2",
     "axios": "^0.26.1",
     "classnames": "^2.3.1",
+    "dayjs": "^1.11.1",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.3.0",
-    "valtio": "^1.5.2"
+    "valtio": "^1.5.2",
+    "zustand": "^4.0.0-rc.0"
   },
   "alias": {
-    "$stores": "./src/stores",
-    "$c": "./src/components"
+    "$s": "./src/stores",
+    "$c": "./src/components",
+    "$cc": "./src/composites"
+  },
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "https": "parcel src/index.html --cert localhost.cert --key localhost.key",
+    "clean": "rm -rf .parcel-cache dist"
   }
 }

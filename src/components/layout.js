@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom'
 
-export default function Layout () {
+export default function Layout ({ children }) {
   return (
-    <div>
-      <Outlet />
+    <>
+      {children ? children : <Outlet />}
       <Nav />
-    </div>
+    </>
   )
 }
 
@@ -13,9 +13,9 @@ function Nav () {
   return (
     <div className='fixed z-50 bottom-0 flex w-full h-14 text-white bg-blue-700'>
       <NavItem text={faker.lorem.word(7)} path='/' />
-      <NavItem text={faker.lorem.word(5)} path='/browse' />
-      <NavItem text={faker.lorem.word(6)} path='/my' />
-      <NavItem text={faker.lorem.word(3)} path='/' />
+      <NavItem text={faker.lorem.word(5)} path='/page1' />
+      <NavItem text={faker.lorem.word(6)} path='/page2' />
+      <NavItem text={faker.lorem.word(3)} path='/page3' />
     </div>
   )
 }

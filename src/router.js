@@ -1,25 +1,55 @@
 import {
-  BrowserRouter as Router,
+  unstable_HistoryRouter as HistoryRouter,
   Routes,
   Route
 } from 'react-router-dom'
 
 import Layout from './components/layout'
-import Home from './composites/home'
-import Browse from './composites/browse'
-import My from './composites/my'
 
-export default () => {
+import * as composites from './composites/**/*.js'
+
+const history = window.his
+
+export default function Router () {
+  const { home, ...routes } = composites
+
   return (
-    <Router>
+    <HistoryRouter history={history}>
       <Routes>
-        <Route path='/' element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path='browse' element={<Browse />} />
-          <Route path='my' element={<My />} />
-          <Route path='*' element={<div>404</div>} />
-        </Route>
+        <Route index element={(
+          <Layout>
+            <home.default />
+          </Layout>
+        )} />
+
+        {_.map(routes, router)}
+
+        <Route path='*' element={<div>404</div>} />
       </Routes>
-    </Router>
+    </HistoryRouter>
+  )
+}
+
+function router (element, filename) {
+  const [pathname, ...params] = filename.split(':')
+
+  let path = '/' + pathname
+
+  if (params.length) {
+    for (const param of params) {
+      path += `/:${param}`
+    }
+  }
+
+  return (
+    <Route key={path} path={path} element={element.layout ? (
+      <element.layout>
+        <element.default />
+      </element.layout>
+    ) : (
+      <Layout>
+        <element.default />
+      </Layout>
+    )} />
   )
 }
