@@ -4,7 +4,7 @@ import _ from 'lodash'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 
 import createStore from 'zustand'
@@ -23,6 +23,7 @@ dayjs.extend(relativeTime)
 window.useEffect = useEffect
 window.useLayoutEffect = useLayoutEffect
 window.useRef = useRef
+window.useState = useState
 
 window.useNavigate = useNavigate
 window.useParams = useParams
