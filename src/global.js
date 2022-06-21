@@ -12,7 +12,7 @@ import classNames from 'classnames'
 
 import { createBrowserHistory } from 'history'
 
-import faker from '@faker-js/faker'
+import { faker } from '@faker-js/faker'
 
 window.axios = axios
 
