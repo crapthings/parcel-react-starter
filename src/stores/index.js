@@ -1,8 +1,11 @@
-import { proxy } from 'valtio'
+const useStore = createStore(() => ({
+  text: 'parcel react starter'
+}))
 
-const store = proxy({
-  list: [1, 2],
-  text: null
-})
+export const updateText = () => {
+  useStore.setState({
+    text: faker.lorem.words()
+  })
+}
 
-export default store
+export default useStore

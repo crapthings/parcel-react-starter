@@ -14,7 +14,11 @@ export default function Router () {
   return (
     <HistoryRouter history={window._history}>
       <Routes>
-        <Route index element={(
+        <Route index element={home.layout ? (
+          <home.layout>
+            <home.default />
+          </home.layout>
+        ) : (
           <Layout>
             <home.default />
           </Layout>

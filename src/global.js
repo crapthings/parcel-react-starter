@@ -1,8 +1,7 @@
 import axios from 'axios'
 
 import _ from 'lodash'
-import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
+import moment from 'moment'
 
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
@@ -17,8 +16,7 @@ import { faker } from '@faker-js/faker'
 window.axios = axios
 
 window._ = _
-window.dayjs = dayjs
-dayjs.extend(relativeTime)
+window.moment = moment
 
 window.useEffect = useEffect
 window.useLayoutEffect = useLayoutEffect

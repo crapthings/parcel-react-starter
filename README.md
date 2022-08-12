@@ -1,4 +1,4 @@
-# Hardhat Parcel Dapp Starter
+# Parcel React Starter
 
 ## Getting Started
 
