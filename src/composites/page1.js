@@ -1,9 +1,15 @@
 export default function Page1 () {
   const [todo, setTodo] = useState({})
 
-  useEffect(async () => {
-    const { data } = await axios.get('/api/todos/1')
-    setTodo(data)
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data } = await axios.get('/api/todos/1', {})
+      setTodo(data)
+    }
+
+    fetchData()
+
+    return () => {}
   }, [])
 
   return (
