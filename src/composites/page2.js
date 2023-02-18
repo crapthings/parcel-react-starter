@@ -1,4 +1,4 @@
-import useStore, { updateText } from '$s'
+import { useStore, updateText } from '$s'
 
 export default function Page2 () {
   const text = useStore((state) => state.text)

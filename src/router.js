@@ -4,15 +4,15 @@ import {
   Route
 } from 'react-router-dom'
 
+import { history } from './history'
 import Layout from './components/layout'
-
 import * as composites from './composites/**/*.js'
 
 export default function Router () {
   const { home, ...routes } = composites
 
   return (
-    <HistoryRouter history={window._history}>
+    <HistoryRouter history={history}>
       <Routes>
         <Route index element={home.layout ? (
           <home.layout>

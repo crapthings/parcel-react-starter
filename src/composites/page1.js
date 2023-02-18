@@ -1,21 +1,25 @@
+import { useStore, getTodos } from '$s'
+
 export default function Page1 () {
-  const [todo, setTodo] = useState({})
+  const loading = useStore((state) => state.loading)
+  const todos = useStore((state) => state.todos)
 
   useEffect(() => {
-    const fetchData = async () => {
-      const { data } = await axios.get('/api/todos/1', {})
-      setTodo(data)
-    }
-
-    fetchData()
-
-    return () => {}
+    getTodos()
   }, [])
+
+  if (loading) {
+    return (
+      <div>loading</div>
+    )
+  }
 
   return (
     <>
-      <div>page1</div>
-      <div>{todo.title}</div>
+      <div>Todos</div>
+      {todos.map((todo) => (
+        <div key={todo.id}>{todo.title}</div>
+      ))}
     </>
   )
 }

@@ -1,9 +1,10 @@
 {
+  "source": "src/index.html",
   "devDependencies": {
     "@parcel/config-default": "^2.8.3",
     "@parcel/resolver-glob": "^2.8.3",
     "autoprefixer": "^10.4.13",
-    "buffer": "^6.0.3",
+    "buffer": "^5.7.1",
     "daisyui": "^2.50.1",
     "http-proxy-middleware": "^2.0.6",
     "parcel": "^2.8.3",
@@ -31,9 +32,9 @@
     "$cc": "./src/composites"
   },
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
-    "https": "parcel src/index.html --cert localhost.cert --key localhost.key",
+    "dev": "parcel",
+    "build": "parcel build",
+    "https": "parcel --cert localhost.cert --key localhost.key",
     "clean": "rm -rf .parcel-cache dist"
   }
 }
