@@ -1,25 +1,35 @@
-import { useStore, getTodos } from '$s'
+import { Virtuoso } from 'react-virtuoso'
+import { useQuery } from '@tanstack/react-query'
+
+import axios from '$l/axios'
 
 export default function Page1 () {
-  const loading = useStore((state) => state.loading)
-  const todos = useStore((state) => state.todos)
+  const { isLoading, data } = useQuery({
+    queryKey: ['todos'],
+    queryFn: async () => {
+      return await axios.get('/todos')
+    }
+  })
 
-  useEffect(() => {
-    getTodos()
-  }, [])
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div>loading</div>
     )
   }
 
   return (
-    <>
-      <div>Todos</div>
-      {todos.map((todo) => (
-        <div key={todo.id}>{todo.title}</div>
-      ))}
-    </>
+    <div className='flex-1'>
+      <Virtuoso
+        totalCount={data.length}
+        itemContent={List(data)}
+        className='min-h-screen'
+      />
+    </div>
+  )
+}
+
+const List = (data) => (index) => {
+  return (
+    <div>{data[index].title}</div>
   )
 }

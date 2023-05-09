@@ -3,30 +3,33 @@
   "devDependencies": {
     "@parcel/config-default": "^2.8.3",
     "@parcel/resolver-glob": "^2.8.3",
-    "autoprefixer": "^10.4.13",
+    "autoprefixer": "^10.4.14",
     "buffer": "^5.7.1",
-    "daisyui": "^2.50.1",
+    "daisyui": "^2.51.6",
     "http-proxy-middleware": "^2.0.6",
     "parcel": "^2.8.3",
     "parcel-reporter-static-files-copy": "^1.5.0",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.23",
     "process": "^0.11.10",
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.3.2"
   },
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
-    "axios": "^1.3.3",
+    "@tanstack/react-query": "^4.29.5",
+    "axios": "^1.4.0",
     "classnames": "^2.3.2",
     "history": "^5.3.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.7.1",
-    "react-router-dom": "^6.8.1",
-    "zustand": "^4.3.3"
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.11.1",
+    "react-virtuoso": "^4.3.6",
+    "zustand": "^4.3.8"
   },
   "alias": {
+    "$l": "./src/libs",
     "$s": "./src/stores",
     "$c": "./src/components",
     "$cc": "./src/composites"

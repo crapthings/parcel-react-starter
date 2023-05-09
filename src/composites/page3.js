@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom'
+
 export default function Page3 () {
   return (
     <div>
       <div>page3</div>
-      <button onClick={navTo(`/list/${faker.lorem.word()}`)}>test</button>
+      <Link to={`/list/${faker.lorem.word()}`}>test</Link>
     </div>
   )
 }

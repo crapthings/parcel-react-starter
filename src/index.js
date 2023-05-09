@@ -1,8 +1,7 @@
 import './global'
 
-import { render } from 'react-dom'
 import { createRoot } from 'react-dom/client'
-import { RouterProvider } from 'react-router-dom'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 
 import Router from './router'
 
@@ -10,4 +9,10 @@ const container = document.querySelector('#app')
 
 const root = createRoot(container)
 
-root.render(<Router />)
+const queryClient = new QueryClient()
+
+root.render(
+  <QueryClientProvider client={queryClient}>
+    <Router />
+  </QueryClientProvider>
+)
