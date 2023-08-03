@@ -1,21 +1,21 @@
 {
   "source": "src/index.html",
   "devDependencies": {
-    "@parcel/config-default": "^2.9.2",
-    "@parcel/resolver-glob": "^2.9.2",
+    "@parcel/config-default": "^2.9.3",
+    "@parcel/resolver-glob": "^2.9.3",
     "autoprefixer": "^10.4.14",
     "buffer": "^6.0.3",
-    "daisyui": "^3.0.23",
+    "daisyui": "^3.5.0",
     "http-proxy-middleware": "^2.0.6",
-    "parcel": "^2.9.2",
-    "parcel-reporter-static-files-copy": "^1.5.0",
-    "postcss": "^8.4.24",
+    "parcel": "^2.9.3",
+    "parcel-reporter-static-files-copy": "^1.5.2",
+    "postcss": "^8.4.27",
     "process": "^0.11.10",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.3"
   },
   "dependencies": {
     "@faker-js/faker": "^8.0.2",
-    "@tanstack/react-query": "^4.29.12",
+    "@tanstack/react-query": "^4.32.1",
     "axios": "^1.4.0",
     "classnames": "^2.3.2",
     "history": "^5.3.0",
@@ -23,10 +23,10 @@
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.9.0",
-    "react-router-dom": "^6.12.1",
-    "react-virtuoso": "^4.3.10",
-    "zustand": "^4.3.8"
+    "react-icons": "^4.10.1",
+    "react-router-dom": "^6.14.2",
+    "react-virtuoso": "^4.4.2",
+    "zustand": "^4.4.0"
   },
   "alias": {
     "$l": "./src/libs",
